@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/',function(){
     return view('layout.app');
 });
+
+Route::get('users/super-admins',function(){
+    return view('apps.page-1');
+});

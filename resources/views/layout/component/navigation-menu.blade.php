@@ -8,7 +8,7 @@
                 <span>Users</span>
             </a>
             <ul>
-                <li><a class="{{  request()->is('admin/dashboard') ? 'active' : '' }}" href="{{ url('/admin/dashboard') }}">Super Admins</a></li>
+                <li><a class="{{  request()->is('users/super-admins') ? 'active' : '' }}" href="{{ url('/users/super-admins') }}">Super Admins</a></li>
                 <li><a class="{{  request()->is('requested-quotes') ? 'active' : '' }}" href="{{ url('/requested-quotes') }}">Managers</a></li>
                 <li><a class="{{  request()->is('offline-leads') ? 'active' : '' }}" href="{{ url('/offline-leads') }}">Players</a></li>
                 <li><a class="{{  request()->is('callbacks') ? 'active' : '' }}" href="{{ url('/callbacks') }}">Resellers</a></li>
