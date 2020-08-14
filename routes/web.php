@@ -22,5 +22,5 @@ Route::get('/',function(){
 });
 
 Route::get('users/super-admins',function(){
-    return view('apps.page-1');
+    return view('apps.super-admins');
 });
