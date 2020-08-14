@@ -1,0 +1,122 @@
+
+/* fieldset, label { margin: 2px; padding: 0px; } */
+h1 { font-size: 1.5em;  }
+
+/* margin: 5px; */
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  /* margin: 5px; */
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  /* display: inline-block; */
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+.ratingBar{
+  size: 80px;
+}
+
+.w3hubs
+{
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%,-50%) rotateY(180deg);
+display: flex;
+}
+.w3hubs input{
+display: none;
+}
+.w3hubs label
+{
+display: block;
+cursor: pointer;
+width: 100px;
+}
+.w3hubs label:before
+{
+content: '\f005';
+font-family:  fontAwesome;
+position: relative;
+display: block;
+font-size: 100px;
+color: #101010;
+}
+.w3hubs label:after
+{
+content: '\f005';
+font-family:  fontAwesome;
+position: absolute;
+display: block;
+font-size: 100px;
+color: #2E86C1;
+top: 0;
+opacity: 0;
+transition: .5s;
+text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+.w3hubs label:hover:after,
+.w3hubs label:hover ~ label:after,
+.w3hubs input:checked ~ label:after
+{
+opacity: 1;
+}
+
+@media(max-width: 502px)
+{
+.w3hubs label{
+width: 80px;
+}
+.w3hubs label:before
+{	
+font-size: 80px;	
+}
+.w3hubs label:after
+{	
+font-size: 80px;
+}
+}
+
+@media(max-width: 407px)
+{
+.w3hubs label{
+width: 50px;
+}
+.w3hubs label:before
+{	
+font-size: 50px;	
+}
+.w3hubs label:after
+{	
+font-size: 50px;
+}
+}
